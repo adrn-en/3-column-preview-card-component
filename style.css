@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+:root {
+	/* Primary */
+	--prm-bright-orange: hsl(31, 77%, 52%);
+	--prm-dark-cyan: hsl(184, 100%, 22%);
+	--prm-vdark-cyan: hsl(179, 100%, 13%);
+
+	/* Neutral */
+	--n-transparent-white: hsla(0, 0%, 100%, 0.75);
+	--n-vlight-gray: hsl(0, 0%, 95%);
+
+	/* --Fonts-- */
+	--ff-main: 'Lexend Deca', sans-serif;
+	--ff-secondary: 'Big Shoulders Display', cursive;
+	--fw-regular: 400;
+	--fw-bold: 700;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 3rem 1.5rem;
+
+	font-family: var(--ff-main);
+	font-weight: var(--fw-regular);
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	width: 60px;
+}
+
+.container {
+	display: grid;
+	border-radius: 10px;
+	color: var(--n-transparent-white);
+	overflow: hidden;
+
+	margin-bottom: 1rem;
+}
+
+.card {
+	padding: 3rem;
+	min-height: 400px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.sedan-card {
+	background-color: var(--prm-bright-orange);
+}
+.suv-card {
+	background-color: var(--prm-dark-cyan);
+}
+.luxury-card {
+	background-color: var(--prm-vdark-cyan);
+}
+
+.title {
+	font-family: var(--ff-secondary);
+	font-weight: var(--fw-bold);
+	text-transform: uppercase;
+	font-size: 2.5rem;
+	color: var(--n-vlight-gray);
+}
+
+.text {
+	font-size: 0.91rem;
+	line-height: 1.5rem;
+}
+
+.btn-learn-more {
+	outline: none;
+	border: 2px solid var(--n-transparent-white);
+	border-radius: 30px;
+	max-width: 140px;
+	padding: 0.9rem 1.5rem;
+	cursor: pointer;
+
+	font-family: var(--ff-main);
+	font-weight: var(--fw-regular);
+	font-size: 0.91rem;
+}
+
+.sedan-card .btn-learn-more {
+	color: var(--prm-bright-orange);
+}
+.suv-card .btn-learn-more {
+	color: var(--prm-dark-cyan);
+}
+.luxury-card .btn-learn-more {
+	color: var(--prm-vdark-cyan);
+}
+
+.btn-learn-more:is(:hover, :active) {
+	color: var(--n-transparent-white);
+	background: transparent;
+}
+
+@media (min-width: 769px) {
+	.container {
+		display: flex;
+		max-width: 920px;
+	}
+
+	.card {
+		min-height: 500px;
+	}
+
+	.btn-learn-more {
+		margin-top: 2rem;
+	}
+}
